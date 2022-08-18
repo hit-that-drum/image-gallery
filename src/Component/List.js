@@ -3,7 +3,13 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Album from './Album.js'
 
-
+const ListOutBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 0 0 3vh;
+  cursor: pointer;
+`
 
 const List = () => {
   const [photos, setPhotos] = useState([]);
@@ -26,11 +32,13 @@ const List = () => {
   }, []);
 
   return (
-    <div>
+    <>
+    <ListOutBox>
       {photos.map((photo) => 
         <Album key={photo.id} photos={photo} />
       )}
-    </div>
+    </ListOutBox>
+    </>
   );
 };
 
