@@ -16,7 +16,7 @@ const FolderBox = styled.div`
       height: 80px;
     }
     div:nth-of-type(1) {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: black;
     }
   }
