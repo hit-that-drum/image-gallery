@@ -14,7 +14,7 @@ const ListOutBox = styled.div`
 `
 
 const List = () => {
-  const [photos, setPhotos] = useState([]);
+  const [folders, setFolders] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const List = () => {
       try {
         const response = await axios.get("https://jsonplaceholder.typicode.com/albums")
         // console.log("data", response.data);
-        setPhotos(response.data);
+        setFolders(response.data);
       } catch (error) {
         console.log("error", error);
       }
@@ -36,16 +36,16 @@ const List = () => {
     return <Loading />
   };
 
-  if (!photos) {
+  if (!folders) {
     return null;
   }
 
   return (
     <>
       <ListOutBox>
-        {photos.map((photo) => 
-          <Link to="/photos" key={photo.id} style={{textDecoration: "none"}}>
-            <Album key={photo.id} photos={photo} />
+        {folders.map((folder) => 
+          <Link to="/photos" key={folder.id} style={{textDecoration: "none"}}>
+            <Album key={folder.id} folders={folder} />
           </Link>
         )}
       </ListOutBox>
