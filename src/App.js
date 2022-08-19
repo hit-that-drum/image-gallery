@@ -1,9 +1,11 @@
+import Header from "./Component/Header";
 import List from "./Component/List";
 
 function App() {
   return (
-    <div >
-      <List></List>
+    <div>
+      <Header />
+      <List />
     </div>
   );
 }
