@@ -34,12 +34,12 @@ const FolderTitle = styled.div`
   color: grey;
 `
 
-const Album = ({ photos }) => {
+const Album = ({ folders }) => {
   return (
     <FolderBox>
       <FolderImg src={folderImg} />
       <FolderTitle>
-        {photos.title}
+        {folders.title}
       </FolderTitle>
     </FolderBox>
   );
