@@ -9,7 +9,7 @@ const FolderBox = styled.div`
   width: 100px;
   height: 150px;
   padding: 2vh;
-  /* margin: auto; */
+  cursor: pointer;
 
   :hover {
     img:nth-of-type(1) {

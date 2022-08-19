@@ -2,23 +2,23 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Album from './Album.js'
+import Loading from './Loading.js';
 
 const ListOutBox = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  cursor: pointer;
   width: 85%;
   margin: 3vh auto;
 `
 
 const List = () => {
   const [photos, setPhotos] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      // setLoading(true);
+      setLoading(true);
       try {
         const response = await axios.get("https://jsonplaceholder.typicode.com/albums")
         console.log("data", response.data);
@@ -27,10 +27,18 @@ const List = () => {
       } catch (error) {
         console.log("error", error);
       }
-      // setLoading(false);
+      setLoading(false);
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return <Loading />
+  };
+
+  if (!photos) {
+    return null;
+  }
 
   return (
     <>
