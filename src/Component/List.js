@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Album from './Album.js'
 
@@ -21,8 +22,7 @@ const List = () => {
       // setLoading(true);
       try {
         const response = await axios.get("https://jsonplaceholder.typicode.com/albums")
-        console.log("data", response.data);
-        // console.log("title", response.data[0].title);
+        // console.log("data", response.data);
         setPhotos(response.data);
       } catch (error) {
         console.log("error", error);
@@ -34,11 +34,13 @@ const List = () => {
 
   return (
     <>
-    <ListOutBox>
-      {photos.map((photo) => 
-        <Album key={photo.id} photos={photo} />
-      )}
-    </ListOutBox>
+      <ListOutBox>
+        {photos.map((photo) => 
+          <Link to="/photos" key={photo.id} style={{textDecoration: "none"}}>
+            <Album key={photo.id} photos={photo} />
+          </Link>
+        )}
+      </ListOutBox>
     </>
   );
 };
