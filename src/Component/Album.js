@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import folderImg from '../Component/folder.png';
+import folderImg from '../img/folder.png';
 
 const FolderBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100px;
   height: 150px;
   padding: 2vh;
@@ -16,7 +17,6 @@ const FolderBox = styled.div`
       height: 80px;
     }
     div:nth-of-type(1) {
-      font-size: 0.9rem;
       color: black;
     }
   }

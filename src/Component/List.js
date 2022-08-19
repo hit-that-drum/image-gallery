@@ -7,8 +7,9 @@ const ListOutBox = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin: 0 0 0 3vh;
   cursor: pointer;
+  width: 85%;
+  margin: 3vh auto;
 `
 
 const List = () => {
